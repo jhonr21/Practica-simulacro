@@ -1,0 +1,1 @@
+export const url = "https://clasesimulacro1.herokuapp.com/registros/";
