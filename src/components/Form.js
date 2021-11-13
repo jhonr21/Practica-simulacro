@@ -8,14 +8,14 @@ import {url} from '../helpers/url';
 export const Form = () => {
 
     const [Jugadores, setJugadores] = useState({
-        Nombre: '',
-        numeroCamiseta: '',
-        Equipo: '',
-        Edad: '',
-        Imagen: ''
+        nombre: '',
+        equipo: '',
+        numero: '',
+        imagen: ''
+        
     })
 
-    const {Nombre,numeroCamiseta,Equipo,Edad,Imagen} = Jugadores;
+    const {nombre,equipo,numero,imagen} = Jugadores;
 
     const postData = () => {
         axios.post(url,Jugadores)
@@ -27,7 +27,7 @@ export const Form = () => {
    const handleChanged = ({target}) => {
     setJugadores({
       ...Jugadores,
-      [target.Nombre]: target.value
+      [target.name]: target.value
     })
 
   }
@@ -38,6 +38,8 @@ export const Form = () => {
 
 
 
+
+
     return (
         <div>
            <form id="formulario" onSubmit={handleSubmit}>
@@ -45,30 +47,26 @@ export const Form = () => {
            <hr/>
                <div>
                    <label>Nombre Completo</label>
-                   <input id="inputNombre" value={Nombre} onChange={handleChanged}/>
+                   <input id="inputnombre" name="nombre" value={nombre} onChange={handleChanged}/>
                </div>
                
                   
                <div>
-                   <label>Numero Camiseta</label>
-                   <input id="inputnumeroCamiseta" value={numeroCamiseta} type="number" name="numeroCamiseta"/>
+                   <label>Equipo</label>
+                   <input id="inputNumero" type="text" value={equipo} name="equipo" onChange={handleChanged}/>
                </div>
                <div>
-                   <label>Equipo</label>
-                   <input id="inputEquipo" type="text" name="Equipo" value={Equipo} onChange={handleChanged}/>
+                   <label>Numero de Camisa</label>
+                   <input id="inputequipo" type="number" name="numero" value={numero} onChange={handleChanged}/>
                </div>
              
                <div>
-                   <label>Edad</label>
-                   <input id="inputEdad" type="number" name="Edad" value={Edad} onChange={handleChanged}/>
-               </div>
-               <div>
-                   <label value={Imagen}>Imagen</label>
-               
+                   <label name="imagen"value={imagen}>Imagen</label>
+                   <input id="botonImagen" type="file" name="imagen" value={imagen}/>
                     
                </div>
                <div>
-               <button onClick={() => postData()} id="btnRegistro">Enviar</button>  
+               <button id="btnRegistro" onClick={() => postData()}>Enviar</button> 
                </div>
            </form>
         </div>

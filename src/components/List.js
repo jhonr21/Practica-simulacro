@@ -57,7 +57,7 @@ export const List = () => {
                          registro.map(r => (
                              <tr key={r.id}>
                                  <td>{r.nombre}</td>
-                                 <td>{r.numeroCamiseta}</td>
+                                 <td>{r.numero}</td>
                                  <td>{r.equipo}</td>
                                  <td>{r.edad}</td>
                                  <td>{r.imagen}</td>
