@@ -27,7 +27,7 @@ export const Form = () => {
    const handleChanged = ({target}) => {
     setJugadores({
       ...Jugadores,
-      [target.name]: target.value
+      [target.Nombre]: target.value
     })
 
   }
