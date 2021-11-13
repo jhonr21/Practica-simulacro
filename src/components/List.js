@@ -56,11 +56,11 @@ export const List = () => {
                      {
                          registro.map(r => (
                              <tr key={r.id}>
-                                 <td>{r.Nombre}</td>
+                                 <td>{r.nombre}</td>
                                  <td>{r.numeroCamiseta}</td>
-                                 <td>{r.Equipo}</td>
-                                 <td>{r.Edad}</td>
-                                 <td>{r.Imagen}</td>
+                                 <td>{r.equipo}</td>
+                                 <td>{r.edad}</td>
+                                 <td>{r.imagen}</td>
                                
                                  
                                  <td><button onClick={() => deleteData(r.id)}>Eliminar</button></td>
