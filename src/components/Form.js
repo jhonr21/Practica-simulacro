@@ -8,11 +8,11 @@ import {url} from '../helpers/url';
 export const Form = () => {
 
     const [Jugadores, setJugadores] = useState({
-        nombre: '',
-        numero: '',
-        equipo: '',
-        años: '',
-        imagen: ''
+        Nombre: '',
+        numeroCamiseta: '',
+        Equipo: '',
+        Edad: '',
+        Imagen: ''
     })
 
     const {Nombre,numeroCamiseta,Equipo,Edad,Imagen} = Jugadores;
